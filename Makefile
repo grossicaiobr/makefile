@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -std=c++11 -Wall
 
 ./build/main: ./build/Heroi.o ./build/Vilao.o ./build/Personagem.o ./build/main.o
-	$(CC) $(CFLAGS) ./build/*.o -o ./build/main
+	$(CC) $(CFLAGS) ./build/*.o -o vpl_execution
 
  ./build/main.o : ./src/main.cpp ./include/Heroi.hpp ./include/Vilao.hpp ./include/Personagem.hpp
 	$(CC) $(CFLAGS) -I ./include/ -c ./src/main.cpp -o ./build/main.o
@@ -17,4 +17,4 @@ CFLAGS = -std=c++11 -Wall
 	$(CC) $(CFLAGS) -I ./include/ -c ./src/entidades/Personagem.cpp -o ./build/Personagem.o
 
 clean:
-	rm -f ./build/*.o
+	rm -f ./build/*
